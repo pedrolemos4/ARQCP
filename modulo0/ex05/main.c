@@ -1,13 +1,14 @@
 #include <stdio.h>
-
+#include "conversor.h"
 
 int main(){
 
-char string;
-int num;
+char string[30];
+int num=0;
 
-scanf("%s",&string);
+printf("Insira a string que pretende converter:\n");
+scanf("%s",string);
 num = string_to_int(string);
-printf("Número= %d", &num);
+printf("Número= %d\n", num);
 return 0;
 }
