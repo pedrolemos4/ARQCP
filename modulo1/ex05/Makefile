@@ -1,7 +1,7 @@
 ex05: upper2.o main.o
 	gcc upper2.o main.o -o ex05
 	
-pper2.o: upper2.c
+upper2.o: upper2.c
 	gcc -g -Wall -c upper2.c -o upper2.o
 	
 main.o: main.c

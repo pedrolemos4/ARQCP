@@ -1,5 +1,5 @@
-#ifndef SUM_EVEN_H
-#define SUM_EVEN_H
+#ifndef UPPER2_H
+#define UPPER2_H
 
 void upper2(char *str);
 

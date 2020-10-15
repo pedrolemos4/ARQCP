@@ -12,10 +12,4 @@ void upper2(char *str){
 		}
 
 	}
-	
-	for(i=0; i<sizeof(str); i++) {
-	
-		printf("%d: %d", i, *(str + i));
-		
-	}
 }
