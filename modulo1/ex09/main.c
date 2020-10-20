@@ -15,7 +15,7 @@ int main()
 	int n;
 	
 	/*
-	 * atribution to n
+	 * attribution to n
 	 */
 	n = sizeof(a)/sizeof(int);
 	
