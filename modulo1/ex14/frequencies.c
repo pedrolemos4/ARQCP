@@ -2,21 +2,25 @@
 
 void frequencies(float *grades, int n, int *freq){
 
-int i,j;
-int aux;
-for(i=0; i<n; i++){
-	aux=1;
-	for(j=i+1; j<n; j++){
-		if((int)*(grades+i) ==(int)*(grades+j)){
-			aux++;
-			*(freq+i)=0;
-		}
-		if(*(freq+i)!=0){
-			*(freq+(int) *(grades+i))=aux;
-		}
-	}
-}
-	if((*(freq+(int) *(grades+0))=-1)){
-		*(freq+(int) *(grades+0))=1;
-	}
+    int grade,i,j;
+    float *temp;
+    
+    for (i = 0; i < 21; i++){
+        *(freq + i)=0;
+    }
+    
+    for (i = 0; i < 21; i++){    
+        temp = grades;
+        
+        for (j= 0; j < n; j++){    
+            grade = (int) *temp;
+           
+            if ( i==grade )  {
+                *freq = *freq +1;
+            }
+            temp++;    
+        }
+        freq++;
+    }
+
 }
