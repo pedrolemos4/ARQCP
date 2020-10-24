@@ -7,7 +7,7 @@ int main()
 {
 	int result;
 	
-	char word[]= "Gateman sees name, garageman sees name tag";
+	char word[]= "Never odd or even";
 	result = palindrome(word);
 	
 	if(result==1)
