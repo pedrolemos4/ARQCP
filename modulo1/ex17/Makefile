@@ -7,5 +7,8 @@ function.o: function.c
 main.o: main.c
 	gcc -g -Wall -c main.c -o main.o
 
+clean:
+	rm -f *.o main
+
 run: main
 	./main
