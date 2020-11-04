@@ -1,21 +1,15 @@
 #include <stdio.h>
 #include "asm.h"
-short s = 0;
-char p=0,t=0;
 
-int main(void)
+char byte1;
+char byte2;
+int main()
 {
-	short charS=0;
-	printf("Valor do short: \n");
-	scanf("%hd", &s);
-	
-	printf("Valor do 1 byte:\n");
-	scanf("%c", &p);
-	printf("Valor do 2 byte:\n");
-	scanf("%c", &t);
-	
-	//newS= swapBytes();
-	charS=concatBytes();
-	printf("Short = %hd\n", charS);
+	printf("byte1: ");
+	scanf("%c", &byte1);
+	printf("byte2: ");
+	scanf(" %c",&byte2);
+	short x = concatBytes();
+	printf("O valor é %hd\n",x);
 	return 0;
 }
