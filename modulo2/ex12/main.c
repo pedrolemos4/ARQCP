@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "asm.h"
 
-int a=2,b=4;
+int A=0;
+int B=0;
 
 int main()
 {
