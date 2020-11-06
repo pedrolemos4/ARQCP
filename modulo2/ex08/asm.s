@@ -1,10 +1,10 @@
 .section .data
-op1:
+s1:
 	.short 0
-.global op1
-op2:
-	.short 0
-.global op2
+.global s1
+s2:
+	.short 1
+.global s2
 
 .section .text
 .global crossSumBytes
@@ -16,7 +16,7 @@ crossSumBytes:
     
     #body
     
-    movl op1, %eax
+    movl s1, %eax
     
     jo with_overflow2
     movl $0, %eax
@@ -26,7 +26,7 @@ with_overflow1:
 	movl $1, %eax
     
 next_1:
-	movl op2, %ecx
+	movl s2, %ecx
 	
 	jo with_overflow2
     movl $0, %ecx

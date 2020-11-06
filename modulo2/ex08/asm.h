@@ -1,5 +1,5 @@
 #ifndef ASM_H
 #define ASM_H
 short crossSumBytes();
-extern short op1,op2;
+extern short s1,s2;
 #endif

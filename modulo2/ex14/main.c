@@ -3,7 +3,8 @@
 
 int main()
 {
-	short x = crossSumBytes();
-	printf("Soma : %u\n",x);
+	int x;
+	x = getArea();
+	printf("Area : %d\n",x);
 	return 0;
 }
