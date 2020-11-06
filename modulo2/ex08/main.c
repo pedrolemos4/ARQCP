@@ -3,7 +3,6 @@
 
 int main()
 {
-	short x = crossSumBytes();
-	printf("Soma : %u\n",x);
+	printf("Soma : %u\n",crossSumBytes());
 	return 0;
 }
