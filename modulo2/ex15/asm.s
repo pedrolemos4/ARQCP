@@ -11,13 +11,12 @@ movl %esp, %ebp 	# the stack frame pointer for sum function
 movl A, %eax
 movl B, %ecx
 imul %ecx
-cdq
 
 movl C, %ecx
 addl %ecx,%eax
-
+cdq
 movl D, %ecx
-idiv %ecx
+idivl %ecx
 
 # epilogue
 	movl %ebp, %esp
