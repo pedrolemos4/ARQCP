@@ -7,7 +7,6 @@ pushl %ebp
 movl %esp, %ebp
 
 #body of the function
-#movl $0, %eax
 movl code,%ecx
 movl currentSalary,%eax
 
