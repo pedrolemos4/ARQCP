@@ -1,14 +1,14 @@
-main: main.o asm.o
-	gcc -Wall -g  main.o asm.o -o main
-
-main.o: main.c asm.h
-	gcc -Wall -g -c main.c
-
-asm.o: asm.s
-	gcc -Wall -g -c asm.s
-
-run: main
-	./main
+main: ordenar.o main.o
+	gcc ordenar.o main.o -o main
+	
+ordenar.o: ordenar.c
+	gcc -g -Wall -c ordenar.c -o ordenar.o
+	
+main.o: main.c
+	gcc -g -Wall -c main.c -o main.o
 	
 clean:
-	rm *.o main
+	rm -f *.o main
+	
+run: main
+	./main
