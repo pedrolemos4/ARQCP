@@ -17,15 +17,29 @@ while:
 		je fim
 		cmpb $'v', %cl
 		je trocar
-continua:
 		movb %cl, (%eax)
 		incl %edx
 		incl %eax
 		jmp while
 		
+		#incl %edx
+		#incl %eax
+		#jmp while
+		
+#continua:
+#		movb %cl, (%eax)
+#		incl %edx
+#		incl %eax
+#		jmp while
+		
 trocar:
 		movb $'b', %cl
-		jmp continua
+		movb %cl, (%eax)
+		incl %edx
+		incl %eax
+		jmp while
+		
+		#jmp continua
 				
 fim:
 	

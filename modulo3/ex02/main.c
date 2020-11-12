@@ -22,10 +22,11 @@ int main(){
 	{
 		while(getchar() != '\n');
 	}
+	printf("Introduziu: \"%s\"\n", ptr1);
 	
 	str_copy_porto();
 	
-	for(i=0;i<sizeof(ptr2);i++){
+	for(i=0;i<sizeof(ptr4);i++){
 		printf("%c" ,*(ptr2+i));
 	}
 	printf("\n");
