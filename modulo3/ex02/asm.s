@@ -22,16 +22,6 @@ while:
 		incl %eax
 		jmp while
 		
-		#incl %edx
-		#incl %eax
-		#jmp while
-		
-#continua:
-#		movb %cl, (%eax)
-#		incl %edx
-#		incl %eax
-#		jmp while
-		
 trocar:
 		movb $'b', %cl
 		movb %cl, (%eax)
@@ -42,7 +32,7 @@ trocar:
 		#jmp continua
 				
 fim:
-	
+	movb $0,(%eax)
 # epilogue
 movl %ebp, %esp	 	
 popl %ebp 			

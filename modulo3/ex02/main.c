@@ -14,6 +14,7 @@ int main(){
 	fgets(ptr1, MAX, stdin);
 	
 	int tam_str = strlen(ptr1);
+	*(ptr1+tam_str)=0;
 	if(*(ptr1 + tam_str - 1) == '\n') 
 	{
 		*(ptr1 + tam_str - 1) = '\0';
@@ -22,14 +23,8 @@ int main(){
 	{
 		while(getchar() != '\n');
 	}
-	printf("Introduziu: \"%s\"\n", ptr1);
 	
 	str_copy_porto();
-	
-	for(i=0;i<sizeof(ptr4);i++){
-		printf("%c" ,*(ptr2+i));
-	}
-	printf("\n");
 
 	return 0;
 }
