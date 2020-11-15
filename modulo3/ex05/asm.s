@@ -38,9 +38,7 @@ vec_avg:
 	movl %esp, %ebp			 	#the stack frame pointe for our function
 	
 	#body of the function
-	pushl %ecx					#guarda o valor de %ecx
 	call vec_sum				#chama a função vec_sum
-	popl %ecx
 	cdq
 	movl num, %ecx				#cópia de num para %ecx
 	cmpl $0, %ecx				#verifica se %ecx é igual a 0
