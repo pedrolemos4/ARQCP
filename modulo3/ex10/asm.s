@@ -1,7 +1,7 @@
 .section .text
-.global str_cat
+.global vec_zero
 
-str_cat:
+vec_zero:
 
 # prologue
 
