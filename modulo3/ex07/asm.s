@@ -47,19 +47,9 @@ decrypt:
 	# prologue
 	pushl %ebp 		
 	movl %esp, %ebp 	
-	#push %esi					#stores value of %esi in the stack
 	pushl %esi
+	
 	#body of the function
-	
-	#pushl %eax
-	#pushl %ecx
-	#pushl %edx
-	#call encrypt
-	
-	#popl %edx
-	#popl %ecx
-	#popl %eax
-	
 	movl $0, %eax
 	movl $0, %edx
 	movl ptr1, %esi
