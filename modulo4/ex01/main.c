@@ -4,9 +4,9 @@
 int main ()
 {
 	int res;
-	int x;
+	int x=0;
 	printf("Introduza o número:\n");
-	scanf("%d",x);
+	scanf("%d",&x);
 	res = cube(x);
 	
 	printf("%d ao cubo é: %d\n",x,res);
