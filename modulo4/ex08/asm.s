@@ -6,12 +6,14 @@ calc:
 #prologue
 	pushl %ebp				 
 	movl %esp, %ebp	
+	
+	subl $4, %esp
 	pushl %esi
 	pushl %ebx
 
 #body of the function	
 	
-	subl $4, %esp			#guardar 1 espaço para uma variavel int
+	#subl $4, %esp			#guardar 1 espaço para uma variavel int
 	
 	movl 16(%ebp), %ebx		# parametro c
 	movl 12(%ebp), %esi		# parametro b
