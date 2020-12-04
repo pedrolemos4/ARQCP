@@ -6,46 +6,44 @@ activate_bits:
 	pushl %ebp				 			#save previous stack frame pointer
 	movl %esp, %ebp			 			#the stack frame pointe for our function
 	
-	subl $8, %esp
 	
-	pushl %ebx
-	pushl %esi
-	movl $0, %ebx
-	movl $0, %esi
+	pushl %ebx							#salvaguarda do registo ebx
+	pushl %esi							#salvaguarda do registo esi
+	movl $0, %ebx						#cópia do valor 0 para %ebx	
+	movl $0, %esi						#cópia do valor 0 para %ebx
 	movl 8(%ebp), %eax					#primeira variável em %eax
-	#movl 12(%ebp),%ecx					#segunda variável em %edx
-	cmpl $31,12(%ebp)
-	je left_is_31
-	jmp continue
+	cmpl $31,12(%ebp)					#verifica se a segunda variável (left) é o último bit do número
+	je left_is_31						#jump se for igual
+	jmp continue	
 	
 	left_is_31:
-		cmpl $0,16(%ebp)
-		je right_is_0
+		cmpl $0,16(%ebp)				#verifica se a terceira variável (right) é o último bit do número
+		je right_is_0					#jump se for igual
 		jmp continue
 		
 	right_is_0:
-		jmp end
+		jmp end						
 	
 	continue:
-		movl 12(%ebp),%ecx					#segunda variável em %edx
-		incl %ecx
+		movl 12(%ebp),%ecx				#segunda variável em %ecx
+		incl %ecx						#incrementa o valor que está em %ecx
 	
 		mask1_loop:
-			shl %ebx
-			incl %ebx
-			loop mask1_loop
+			shl %ebx					#desloca um bit para a esquerda o número que está em %ebx
+			incl %ebx					#incrementa %ebx
+			loop mask1_loop				#decrementa o valor de %ecx, se for maior que 0, repete o ciclo
 	
-		notl %ebx
+		notl %ebx						#inverte todos os bits de %ebx
 	
-		movl 16(%ebp),%ecx
+		movl 16(%ebp),%ecx				#terceira variável para %ecx
 	
 		mask2_loop:
-			shl %esi
-			incl %esi
-			loop mask2_loop
+			shl %esi					#desloca um bit para a esquerda o número que está em %esi
+			incl %esi					#incrementa %ebx
+			loop mask2_loop				#decrementa o valor de %ecx, se for maior que 0, repete o ciclo
 	
-		orl %ebx,%esi
-		orl %esi,%eax
+		orl %ebx,%esi					#operação lógica or
+		orl %esi,%eax					#operação lógica or
 	
 		
 	end:
