@@ -12,14 +12,15 @@ activate_bit:
 #body of the function	
 	
 	movl 8(%ebp), %edx
-	movl $0, %ebx
+	movl $1, %ebx
 	movb 12(%ebp), %cl
 	movl (%edx),%esi
 	movl (%edx), %eax
 	
-	sal %cl, %ebx
-	orl %ebx,%esi
-	cmpl %esi, %eax 
+	sall %cl, %ebx
+	orl %esi,%ebx
+	movl %ebx, (%edx)
+	cmpl %ebx, %eax
 	je zero
 	movl $1, %eax
 	jmp fim

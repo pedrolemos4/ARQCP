@@ -3,9 +3,9 @@
 
 int main()
 {
-	int aux[]={0x11};
+	int aux[]={1};
 	int *ptr =aux;
-	int pos = 12;
+	int pos = 4;
 	int f=activate_bit(ptr, pos);
 	
 	printf("Main: %d \n",f);
