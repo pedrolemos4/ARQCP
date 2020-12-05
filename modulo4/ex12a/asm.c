@@ -8,7 +8,7 @@ int activate_bit(int *ptr, int pos){
 	
 	*(ptr) = aux | mask;
 	
-	if(aux==*(ptr)){
+	if(aux==*(ptr)){		//verifica se o número alterado é igual ao original
 		return 0;
 	}
 	
