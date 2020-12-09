@@ -1,14 +1,14 @@
-main: main.o asm.o
-	gcc -Wall -g  main.o asm.o -o main
+main: main.o stats.o extremas.o
+	gcc -Wall -g  main.o stats.o extremas.o -o main
 
 main.o: main.c asm.h
 	gcc -Wall -g -c main.c
 
-asm.o: asm.s
-	gcc -Wall -g -c asm.s
+stats.o: stats.s
+	gcc -Wall -g -c stats.s
 	
-asm.o: asm.c
-	gcc -Wall -g -c asm.c
+extremas.o: extremas.s
+	gcc -Wall -g -c extremas.s
 
 run: main
 	./main
