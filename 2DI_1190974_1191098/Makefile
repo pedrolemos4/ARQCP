@@ -6,6 +6,9 @@ main.o: main.c asm.h
 
 asm.o: asm.s
 	gcc -Wall -g -c asm.s
+	
+asm.o: asm.c
+	gcc -Wall -g -c asm.c
 
 run: main
 	./main
