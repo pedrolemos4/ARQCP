@@ -17,7 +17,6 @@ int main ()
 	printf("Nome: %s\nIdade: %d\nNúmero: %d\nMorada: %s\n\n\n",s->name, s->age,
 	s->number,s->address);
 	s++ ;
-	*ptrname1++;
 	
 	char name2 [80] = "Pedro";
 	char *ptrname2 = name2;
