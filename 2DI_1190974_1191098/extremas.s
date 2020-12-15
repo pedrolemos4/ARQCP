@@ -29,7 +29,7 @@ extremas:
 	movl $0, %ebx					#contador do 2 byte para ver se é a maior
 	movl $0, %esi					#contador do 3 byte para ver se é a maior
 	movl $0, %edx					#contador do 4 byte para ver se é a maior
-	
+	movl $0, %ecx
 	pushl %eax
 	pushl %ebx
 	movl -4(%ebp), %eax			
@@ -182,10 +182,10 @@ menorESI:
 	
 maiorEDX:
 	movl -16(%ebp), %edx
-	movb %edx, %ch
+	movl %edx, %ch
 	popl %edx
 	
-	cmpl %edx, $0
+	cmpl $0, %edx
 	pushl %edx
 	je menorEDX
 	
