@@ -13,23 +13,23 @@ fill_s1:
 	movl %esp, %ebp			 			#the stack frame pointer for our function
 	
 	
-	movl 8(%ebp),%edx
+	movl 8(%ebp),%edx					#cópia do primeiro parâmetro para %edx
 	
-	movl 12(%ebp),%eax
+	movl 12(%ebp),%eax					#cópia do segundo parâmetro para %eax
 	
-	movl %eax,(%edx)
+	movl %eax,(%edx)					#cópia de %eax para o apontado por %edx
+			
+	movb 16(%ebp), %al					#cópia do terceiro parâmetro para %al
 	
-	movb 16(%ebp), %al
+	movb %al, C_OFFSET(%edx)			#cópia de %al para o apontado por %edx, tendo em conta o offset
 	
-	movb %al, C_OFFSET(%edx)
+	movl 20(%ebp),%eax					#cópia do quarto parâmetro para %eax
 	
-	movl 20(%ebp),%eax
+	movl %eax, J_OFFSET(%edx)			#cópia de %eax para o apontado por %edx, tendo em conta o offset
 	
-	movl %eax, J_OFFSET(%edx)
+	movb 24(%ebp), %al					#cópia do quinto parâmetro para %al
 	
-	movb 24(%ebp), %al
-	
-	movb %al, D_OFFSET(%edx)
+	movb %al, D_OFFSET(%edx)			#cópia de %al para o apontado por %edx, tendo em conta o offset
 	
 	#epilogue
 		movl %ebp, %esp			 		#restore the stack pointer
